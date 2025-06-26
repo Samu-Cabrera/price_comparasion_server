@@ -1,8 +1,8 @@
-import { chromium } from "playwright";
+import { launchBrowser } from "../utils/launchBrowser.js";
 import { cleanPrice } from "../utils/cleanPrice.js";
 
 export const scrapeTopTechnologyDetails = async (url) => {
-  const browser = await chromium.launch({ headless: true });
+  const browser = await launchBrowser();
   const context = await browser.newContext({
     userAgent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
   });
